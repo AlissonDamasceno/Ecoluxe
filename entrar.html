@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="entrar.css">
+</head>
+<body>
+    <div class="login">
+        <form name="LoginForm" onsubmit="return login()">
+            <h2>Login</h2>
+            <label for="username">Usuário</label>
+            <input type="text" id="username" required>
+            <label for="password">Senha</label>
+            <input type="password" id="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            
+
+            if (username === "uni9" && password === "uninove10") {
+                alert("Login bem-sucedido!");
+                
+                window.location.href = "home.html"
+            } else {
+                alert("Usuário ou senha inválidos!");
+            }
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

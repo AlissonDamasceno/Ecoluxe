@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>ECOLUXE</title>
+</head>
+<body>
+    <header>
+      <main>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Digite sua pesquisa">
+            <button class="search-button">Pesquisar</button>
+        </div>
+    </main>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="entrar.html">Login</a></li>
+                <li><a href="login.html">Cadastro</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+      <div class="logo">   <h1> <img src="logoecoluxe.png" alt=""> </h1> </div> <br>
+
+        <div><h2>Seja Bem Vindo  ao nosso site </div> <br>
+        <p>Os nossos produtos estão em nosso home,assim que feito o login ele aparecerá</p><br>
+        <p>Aqui está uma demonstração do que teremos por lá</p>
+
+        <div class="carrossel-container">
+            <div class="carrossel-slides">
+                <div class="carrossel-slide">
+                    <img src="banco.png" alt="">
+                </div>
+                <div class="carrossel-slide">
+                    <img src="beleza1.png" alt="">
+                </div>
+                <div class="carrossel-slide">
+                    <img src="artesanais1.png" alt="">
+                </div>
+            </div>
+            <div class="carrossel-navigation">
+                <button class="carrossel-prev">Anterior</button>
+                <button class="carrossel-next">Próximo</button>
+            </div>
+        </div>
+    
+        <script>
+            const carousel = document.querySelector('.carrossel-slides');
+            const prevButton = document.querySelector('.carrossel-prev');
+            const nextButton = document.querySelector('.carrossel-next');
+    
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.carrossel-slide');
+            const totalSlides = slides.length;
+    
+            prevButton.addEventListener('click', () => {
+                slideIndex--;
+                if (slideIndex < 0) {
+                    slideIndex = totalSlides - 1;
+                }
+                updateCarrossel();
+            });
+    
+            nextButton.addEventListener('click', () => {
+                slideIndex++;
+                if (slideIndex === totalSlides) {
+                    slideIndex = 0;
+                }
+                updateCarrossel();
+            });
+    
+            function updateCarrossel() {
+                carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+    
+                const navigationButtons = document.querySelectorAll('.carrossel-navigation button');
+                navigationButtons.forEach((button, index) => {
+                    if (index === slideIndex) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+            }
+        </script>
+
+    <div class="ft">
+        <footer>
+            <p>Condições de Uso</p>
+            <p>Notificação de Privacidade</p>
+            <p>Cookies</p>
+            <p>Anúncios Baseados em Interesses</p>
+            <p>Ⓡ 2023 ECOLUXE.com, Inc. ou suas afiliadas</p>
+            <p>ecoluxehome@gmail.com</p>
+            <p>Amazon Serviços de Varejo do Brasil Ltda. | CNPJ 00.000.000/0000-00 </p>
+            <p>AV. César Russo 2900 - São Paulo CEP: 000000| Fale conosco| ajuda-ECOLUXE.com.br</p>
+            <p>Formas de pagamento aceitas: cartões de crédito (Visa, MasterCard, Elo e American Express), cartões de débito (Visa e Elo), Boleto e Pix.</p>
+        </footer>
+    </div>
+</body>
+</html>

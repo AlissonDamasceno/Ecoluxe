@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Cadastre-se</title>
+    <script src="script.js"></script>
+
+        <header>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="sair.html">Log-out</a></li>
+                </ul>
+            </nav>
+        </header>
+    <div class="login">
+            <form name="Login" method="post" action="entrar.html" onsubmit="return validarFormulario()">
+            <fieldset>
+                <legend>Cadastre-se</legend>
+                <label for="Login">Login</label> 
+                <input type="text" name="Login" id="Login" placeholder="digite seu nome de usuário" required><br>
+                <label for="senha">Senha</label> 
+                <input type="password" name="senha" id="senha" placeholder="senha do usuário" required><br>
+                <label for="E-mail">E-mail</label> 
+                <input type="email" name="E-mail" id="E-mail" placeholder="digite seu email de usuário" required><br>
+                <label for="data">Data De Nascimento</label> 
+                <input type="date" name="data" id="data" required><br>
+                <button type="submit">Cadastre-se</button>
+            </fieldset>
+        </form>
+        
+    </div>
+
+    <script>
+        function validarFormulario() {
+            var login = document.forms["Login"]["Login"].value;
+            var senha = document.forms["Login"]["senha"].value;
+            var email = document.forms["Login"]["E-mail"].value;
+
+            if (login === "") {
+                alert("Por favor, preencha o campo de login.");
+                return false;
+            }
+
+            if (senha === "") {
+                alert("Por favor, preencha o campo de senha.");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Por favor, preencha o campo de e-mail.");
+                return false;
+            }
+
+            
+
+            return true;
+        }
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor, insira um endereço de e-mail válido.");
+                return false;
+            }
+
+            return true;
+
+            
+    </script>
+</body>
+</html>
